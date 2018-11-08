@@ -24,5 +24,3 @@ class Randomizer:
 		for q in self.placement:
 			print "total:" + str(q.__len__()) +" ==> "+ str(q)
 		return self.placement
-
-r = Randomizer()
