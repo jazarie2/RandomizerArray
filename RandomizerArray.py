@@ -17,10 +17,12 @@ class Randomizer:
 				self.maxlimit = int(round((self.maxval/(self.trial))))+3
 				self.minlimit = self.maxval/(self.trial)-3
 				howmany = np.random.randint(self.minlimit,self.maxlimit)		
-				t = list(np.random.choice(self.stack,howmany,replace=False))				
-				self.placement.append(t)
+				t = list(np.random.choice(self.stack,howmany,replace=False))			
+				self.placement.append(np.sort(t))
 				self.stack = list(set(self.stack) - set(t))
 		self.placement.append(self.stack)
 		for q in self.placement:
 			print "total:" + str(q.__len__()) +" ==> "+ str(q)
-		return np.sort(self.placement)
+		return self.placement
+
+r = Randomizer()
